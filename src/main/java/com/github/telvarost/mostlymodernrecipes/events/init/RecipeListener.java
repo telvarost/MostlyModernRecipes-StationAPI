@@ -40,7 +40,7 @@ public class RecipeListener {
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "XXX", "   ", 'X', BlockBase.COBBLESTONE);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "   ", "XXX", 'X', BlockBase.COBBLESTONE);
 
-//                      * Craftable Snow layers, 6 for 3 Snow Blocks (maybe? i dunno if that feels too un-vanilla but i personally don’t see any harm in it)
+//                      * Craftable Snow layers, 6 for 3 Snow Blocks
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.SNOW_BLOCK);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "   ", "XXX", "   ", 'X', BlockBase.SNOW_BLOCK);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "   ", "   ", "XXX", 'X', BlockBase.SNOW_BLOCK);

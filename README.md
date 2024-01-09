@@ -23,7 +23,7 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafti
 * Modern Fence recipe
 * Shapeless Jack o’ Lanterns
 * Shapeless Sticky Pistons
-* Craftable Snow layers, 6 for 3 Snow Blocks (maybe? i dunno if that feels too un-vanilla but i personally don’t see any harm in it)
+* Craftable Snow layers, 6 for 3 Snow Blocks
 
 The following recipes are not added, yet. But, we would like to add them when we figure out how:
 
