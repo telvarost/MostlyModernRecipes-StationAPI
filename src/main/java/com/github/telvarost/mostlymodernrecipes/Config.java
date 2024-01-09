@@ -10,7 +10,7 @@ public class Config {
 
     public static class ConfigFields {
 
-        @ConfigName("Player Crafting Grid Can Be Used As Inventory Slots")
-        public static Boolean allowCraftingInventorySlots = true;
+//        @ConfigName("Player Crafting Grid Can Be Used As Inventory Slots")
+//        public static Boolean allowCraftingInventorySlots = true;
     }
 }
