@@ -12,17 +12,14 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafti
 
 **There's a very high chance this mod will not work in multiplayer, as of right now it is purely for singleplayer**
 
-## List added recipes
+## List of added recipes
 
 * Shapeless Flint and Steel
 * Shapeless Mushroom Stew
-* Books require 1 leather and 3 paper
-* Shapeless Books
 * Shapeless Minecart Chest
 * Shapeless Minecart Furnace
 * Slabs craft 6 per craft
 * Buttons crafted with 1 Stone
-* Trapdoors craft 2 per craft (This may be how it works currently, i currently can’t test and im not 100% confident so im putting that here)
 * Modern Fence recipe
 * Shapeless Jack o’ Lanterns
 * Shapeless Sticky Pistons
@@ -30,6 +27,8 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafti
 
 The following recipes are not added, yet. But, we would like to add them when we figure out how:
 
+* Books require 1 leather and 3 paper
+* Shapeless Books
 * Ladders craft 3 per craft
 
 ## Installation using Prism Launcher

@@ -5,23 +5,28 @@ import net.mine_diver.unsafeevents.listener.ListenerPriority;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeRegistry;
 import net.modificationstation.stationapi.api.event.recipe.RecipeRegisterEvent;
 import net.modificationstation.stationapi.api.recipe.CraftingRegistry;
 import net.modificationstation.stationapi.api.recipe.FuelRegistry;
 import net.modificationstation.stationapi.api.util.Identifier;
 
+import java.util.List;
+
 public class RecipeListener {
 
-    @EventListener(priority = ListenerPriority.LOWEST)
+    @EventListener
     public void registerRecipes(RecipeRegisterEvent event) {
         Identifier type = event.recipeId;
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPED.type()) {
 //            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.woodDoor, 3), "XX ", "XX ", "XX ", 'X', BlockBase.WOOD);
 //            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.ironDoor, 3), "XX ", "XX ", "XX ", 'X', ItemBase.ironIngot);
-//            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.LADDER.asItem(), 3), "X X", "XXX", "X X", 'X', ItemBase.stick);
 //            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.sign, 3), "XXX", "XXX", " Y ", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
-//
+//            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.LADDER.asItem(), 3), "X X", "XXX", "X X", 'X', ItemBase.stick);
+
+//                      * Slabs craft 6 per craft
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.STONE);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "XXX", "   ", 'X', BlockBase.STONE);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "   ", "XXX", 'X', BlockBase.STONE);
@@ -34,6 +39,35 @@ public class RecipeListener {
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "XXX", "   ", "   ", 'X', BlockBase.COBBLESTONE);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "XXX", "   ", 'X', BlockBase.COBBLESTONE);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "   ", "XXX", 'X', BlockBase.COBBLESTONE);
+
+//                      * Craftable Snow layers, 6 for 3 Snow Blocks (maybe? i dunno if that feels too un-vanilla but i personally don’t see any harm in it)
+            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.SNOW_BLOCK);
+            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "   ", "XXX", "   ", 'X', BlockBase.SNOW_BLOCK);
+            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "   ", "   ", "XXX", 'X', BlockBase.SNOW_BLOCK);
+
+//                      * Modern Fence recipe
+            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "XYX", "XYX", "   ", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
+            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "   ", "XYX", "XYX", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
+        }
+
+        if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
+//                      * Books require 1 leather and 3 paper
+//                      * Shapeless Books
+
+//                      * Shapeless Flint and Steel
+            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.flintAndSteel, 1), ItemBase.flint, ItemBase.ironIngot);
+//                      * Shapeless Mushroom Stew
+            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.mushroomStew, 1), ItemBase.bowl, BlockBase.BROWN_MUSHROOM, BlockBase.RED_MUSHROOM);
+//                      * Shapeless Minecart Chest
+            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartChest, 1), ItemBase.minecart, BlockBase.CHEST);
+//                      * Shapeless Minecart Furnace
+            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartFurnace, 1), ItemBase.minecart, BlockBase.FURNACE);
+//                      * Buttons crafted with 1 Stone
+            CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.BUTTON.asItem(), 1), BlockBase.STONE);
+//                      * Shapeless Jack o’ Lanterns
+            CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.JACK_O_LANTERN.asItem(), 1), BlockBase.PUMPKIN, BlockBase.TORCH);
+//                      * Shapeless Sticky Pistons
+            CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.STICKY_PISTON, 1), BlockBase.PISTON, ItemBase.slimeball);
         }
     }
 }
