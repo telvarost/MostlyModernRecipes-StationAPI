@@ -6,8 +6,7 @@
   "name": "MostlyModernRecipes",
   "description": "Adds some quality of life changes and fixes some graphical issues.",
   "authors": [
-    "Telvarost",
-    "Wynd"
+    "Telvarost"
   ],
   "contact": {
     "issues": "https://github.com/telvarost/MostlyModernRecipes-StationAPI/issues",
