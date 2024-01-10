@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "MostlyModernRecipes",
-  "description": "Adds some quality of life changes and fixes some graphical issues.",
+  "description": "Adds some modern Minecraft crafting recipes.",
   "authors": [
     "Telvarost"
   ],
