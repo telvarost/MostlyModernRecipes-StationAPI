@@ -29,6 +29,7 @@ public class RecipeListener {
             List<Recipe> recipes = RecipeRegistry.getInstance().getRecipes();
             for (int i = 0; i < recipes.size(); i++) {
                 Recipe recipe = recipes.get(i);
+
                 if (recipe.getOutput().itemId == BlockBase.LADDER.asItem().id) {
                     ItemInstance[] inputArray = new ItemInstance[9];
                     inputArray[0] = new ItemInstance(ItemBase.stick, 1);
@@ -40,7 +41,20 @@ public class RecipeListener {
                     inputArray[8] = new ItemInstance(ItemBase.stick, 1);
                     recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.LADDER.asItem(), 3)));
                 }
+
+//                      * Modern Fence recipe
+                if (recipe.getOutput().itemId == BlockBase.FENCE.asItem().id) {
+                    ItemInstance[] inputArray = new ItemInstance[9];
+                    inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                    inputArray[1] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[2] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                    inputArray[3] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                    inputArray[4] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[5] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                    recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.LADDER.asItem(), 3)));
+                }
             }
+            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "   ", "XYX", "XYX", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
 
 //                      * Slabs craft 6 per craft
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.STONE);
@@ -60,10 +74,6 @@ public class RecipeListener {
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.SNOW_BLOCK);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "   ", "XXX", "   ", 'X', BlockBase.SNOW_BLOCK);
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "   ", "   ", "XXX", 'X', BlockBase.SNOW_BLOCK);
-
-//                      * Modern Fence recipe
-            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "XYX", "XYX", "   ", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
-            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "   ", "XYX", "XYX", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
         }
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
