@@ -14,6 +14,7 @@ import net.modificationstation.stationapi.api.recipe.CraftingRegistry;
 import net.modificationstation.stationapi.api.recipe.FuelRegistry;
 import net.modificationstation.stationapi.api.util.Identifier;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -29,6 +30,21 @@ public class RecipeListener {
 //            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.ironDoor, 3), "XX ", "XX ", "XX ", 'X', ItemBase.ironIngot);
 //            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.sign, 3), "XXX", "XXX", " Y ", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
 //            CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.LADDER.asItem(), 3), "X X", "XXX", "X X", 'X', ItemBase.stick);
+            List<Recipe> recipes = RecipeRegistry.getInstance().getRecipes();
+            for (int i = 0; i < recipes.size(); i++) {
+                Recipe recipe = recipes.get(i);
+                if (recipe.getOutput().itemId == BlockBase.LADDER.asItem().id) {
+                    ItemInstance[] inputArray = new ItemInstance[9];
+                    inputArray[0] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[2] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[3] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[4] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[5] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[6] = new ItemInstance(ItemBase.stick, 1);
+                    inputArray[8] = new ItemInstance(ItemBase.stick, 1);
+                    recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.LADDER.asItem(), 3)));
+                }
+            }
 
 //                      * Slabs craft 6 per craft
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.STONE);
