@@ -51,7 +51,7 @@ public class RecipeListener {
                     inputArray[3] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
                     inputArray[4] = new ItemInstance(ItemBase.stick, 1);
                     inputArray[5] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                    recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.LADDER.asItem(), 3)));
+                    recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.FENCE.asItem(), 3)));
                 }
             }
             CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "   ", "XYX", "XYX", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
