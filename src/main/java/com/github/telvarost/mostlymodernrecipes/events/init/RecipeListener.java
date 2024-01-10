@@ -7,11 +7,15 @@ import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeRegistry;
+import net.minecraft.recipe.ShapedRecipe;
+import net.minecraft.recipe.ShapelessRecipe;
 import net.modificationstation.stationapi.api.event.recipe.RecipeRegisterEvent;
 import net.modificationstation.stationapi.api.recipe.CraftingRegistry;
 import net.modificationstation.stationapi.api.recipe.FuelRegistry;
 import net.modificationstation.stationapi.api.util.Identifier;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class RecipeListener {
@@ -53,6 +57,18 @@ public class RecipeListener {
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
 //                      * Books require 1 leather and 3 paper
 //                      * Shapeless Books
+            List<Recipe> recipes = RecipeRegistry.getInstance().getRecipes();
+            for (int i = 0; i < recipes.size(); i++) {
+                Recipe recipe = recipes.get(i);
+                if (recipe.getOutput().itemId == ItemBase.book.id) {
+                    List<ItemInstance> inputList = new LinkedList<>();
+                    inputList.add(new ItemInstance(ItemBase.paper, 1));
+                    inputList.add(new ItemInstance(ItemBase.paper, 1));
+                    inputList.add(new ItemInstance(ItemBase.paper, 1));
+                    inputList.add(new ItemInstance(ItemBase.leather, 1));
+                    recipes.set(i, new ShapelessRecipe(new ItemInstance(ItemBase.book, 1), inputList));
+                }
+            }
 
 //                      * Shapeless Flint and Steel
             CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.flintAndSteel, 1), ItemBase.flint, ItemBase.ironIngot);
