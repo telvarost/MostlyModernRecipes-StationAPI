@@ -20,15 +20,11 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafti
 * Shapeless Minecart Furnace
 * Slabs craft 6 per craft
 * Buttons crafted with 1 Stone
-* Modern Fence recipe
+* Modern Fence recipe (old recipe is removed)
 * Shapeless Jack o’ Lanterns
 * Shapeless Sticky Pistons
 * Craftable Snow layers, 6 for 3 Snow Blocks
-
-The following recipes are not added, yet. But, we would like to add them when we figure out how:
-
-* Books require 1 leather and 3 paper
-* Shapeless Books
+* Books require 1 leather and 3 paper (recipe is now shapeless, and old recipe is removed)
 * Ladders craft 3 per craft
 
 ## Installation using Prism Launcher
