@@ -14,19 +14,23 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafti
 
 ## List of added recipes
 
+v1.1.0:
+* Remove old fence recipe (modern fence recipe is the new normal)
+* Books require 1 leather and 3 paper (recipe is now shapeless, and old recipe is removed)
+* Ladders craft 3 per craft
+* Redye wool to any color with dye: https://minecraft.wiki/w/Dye#Dyeing_wool_and_mobs
+
+v1.0.1:
 * Shapeless Flint and Steel
 * Shapeless Mushroom Stew
 * Shapeless Minecart Chest
 * Shapeless Minecart Furnace
 * Slabs craft 6 per craft
 * Buttons crafted with 1 Stone
-* Modern Fence recipe (old recipe is removed)
+* Modern Fence recipe
 * Shapeless Jack o’ Lanterns
 * Shapeless Sticky Pistons
 * Craftable Snow layers, 6 for 3 Snow Blocks
-* Books require 1 leather and 3 paper (recipe is now shapeless, and old recipe is removed)
-* Ladders craft 3 per craft
-* Redye wool to any color with dye: https://minecraft.wiki/w/Dye#Dyeing_wool_and_mobs
 
 ## Installation using Prism Launcher
 
