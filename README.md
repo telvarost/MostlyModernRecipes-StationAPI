@@ -2,8 +2,6 @@
 
 A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafting recipes.
 
-# Mod Info:
-
 ## List of Recipe Tweaks
 
 v1.2:
