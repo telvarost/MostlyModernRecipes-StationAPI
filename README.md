@@ -14,6 +14,12 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafti
 
 ## List of added recipes
 
+v1.2:
+* All recipes can now be enabled/disabled
+* Removed shapeless Jack o’ Lantern recipe
+  * Modern Minecraft does not have shapeless Jack o' Lanterns so the recipe has been moved to the [MiscTweaks](https://github.com/telvarost/MiscTweaks-StationAPI) mod
+  * Modern Minecraft Jack o' Lanterns: https://minecraft.wiki/w/Jack_o%27Lantern
+
 v1.1:
 * Remove old fence recipe (modern fence recipe is the new normal)
 * Books require 1 leather and 3 paper (recipe is now shapeless, and old recipe is removed)
