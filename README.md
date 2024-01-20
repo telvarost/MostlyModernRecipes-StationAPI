@@ -2,17 +2,9 @@
 
 A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafting recipes.
 
-**If you're looking for graphical fixes and some QoL see:** https://github.com/telvarost/FinalBeta-StationAPI
+# Mod Info:
 
-**If you're looking for skin fixes and inventory fixes:** https://modrinth.com/mod/mojangfix/versions
-
-**If you're looking for vanilla Minecraft block/entity bug fixes:** https://github.com/telvarost/AnnoyanceFix-StationAPI
-
-# Mostly Modern Recipes
-
-**There's a very high chance this mod will not work in multiplayer, as of right now it is purely for singleplayer**
-
-## List of added recipes
+## List of Recipe Tweaks
 
 v1.2:
 * All recipes can now be enabled/disabled
