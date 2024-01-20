@@ -14,7 +14,7 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafti
 
 ## List of added recipes
 
-v1.1.0:
+v1.1.1:
 * Remove old fence recipe (modern fence recipe is the new normal)
 * Books require 1 leather and 3 paper (recipe is now shapeless, and old recipe is removed)
 * Ladders craft 3 per craft
