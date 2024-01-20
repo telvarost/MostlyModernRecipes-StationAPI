@@ -26,6 +26,10 @@ public class Config {
         @Comment("Restart required")
         public static Boolean enableModernSlabRecipes = true;
 
+        @ConfigName("Enable Modern Stone Button Recipe")
+        @Comment("Restart required")
+        public static Boolean enableModernStoneButtonRecipe = true;
+
         @ConfigName("Enable Redyeing Wool Recipes")
         @Comment("Restart required")
         public static Boolean enableRedyeingWoolRecipes = true;
@@ -34,20 +38,24 @@ public class Config {
         @Comment("Restart required")
         public static Boolean enableSnowLayerRecipe = true;
 
-        @ConfigName("Enable Diamond Ore Recipe")
+        @ConfigName("Shapeless Flint and Steel Recipe")
         @Comment("Restart required")
-        public static Boolean enableDiamondOreRecipe = true;
+        public static Boolean shapelessFlintAndSteelRecipe = true;
 
-        @ConfigName("Enable Fire Recipe")
+        @ConfigName("Shapeless Minecart Chest Recipe")
         @Comment("Restart required")
-        public static Boolean enableFireRecipe = true;
+        public static Boolean shapelessMinecartChestRecipe = true;
 
-        @ConfigName("Enable Grass Recipe")
+        @ConfigName("Shapeless Minecart Furnace Recipe")
         @Comment("Restart required")
-        public static Boolean enableGrassRecipe = true;
+        public static Boolean shapelessMinecartFurnaceRecipe = true;
 
-        @ConfigName("Enable Apple Recipe")
+        @ConfigName("Shapeless Mushroom Stew Recipe")
         @Comment("Restart required")
-        public static Boolean enableAppleRecipe = true;
+        public static Boolean shapelessMushroomStewRecipe = true;
+
+        @ConfigName("Shapeless Sticky Piston Recipe")
+        @Comment("Restart required")
+        public static Boolean shapelessStickyPistonRecipe = true;
     }
 }

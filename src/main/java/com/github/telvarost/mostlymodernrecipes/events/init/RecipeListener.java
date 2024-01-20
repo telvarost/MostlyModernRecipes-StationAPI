@@ -91,6 +91,15 @@ public class RecipeListener {
                         recipes.set(i, new ShapelessRecipe(new ItemInstance(ItemBase.book, 1), inputList));
                     }
                 }
+
+
+                if (recipe.getOutput().itemId == BlockBase.BUTTON.id) {
+                    if (Config.ConfigFields.enableModernStoneButtonRecipe) {
+                        List<ItemInstance> inputList = new LinkedList<>();
+                        inputList.add(new ItemInstance(BlockBase.STONE, 1));
+                        recipes.set(i, new ShapelessRecipe(new ItemInstance(BlockBase.BUTTON, 1), inputList));
+                    }
+                }
             }
 
             /** - Redyeing wool is a thing in modern MC: https://minecraft.wiki/w/Dye#Dyeing_wool_and_mobs */
@@ -112,18 +121,26 @@ public class RecipeListener {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 14), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 1)); // red
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 15), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 0)); // black
             }
-//                      * Shapeless Flint and Steel
-            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.flintAndSteel, 1), ItemBase.flint, ItemBase.ironIngot);
-//                      * Shapeless Mushroom Stew
-            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.mushroomStew, 1), ItemBase.bowl, BlockBase.BROWN_MUSHROOM, BlockBase.RED_MUSHROOM);
-//                      * Shapeless Minecart Chest
-            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartChest, 1), ItemBase.minecart, BlockBase.CHEST);
-//                      * Shapeless Minecart Furnace
-            CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartFurnace, 1), ItemBase.minecart, BlockBase.FURNACE);
-//                      * Buttons crafted with 1 Stone
-            CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.BUTTON.asItem(), 1), BlockBase.STONE);
-//                      * Shapeless Sticky Pistons
-            CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.STICKY_PISTON, 1), BlockBase.PISTON, ItemBase.slimeball);
+
+            if (Config.ConfigFields.shapelessFlintAndSteelRecipe) {
+                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.flintAndSteel, 1), ItemBase.flint, ItemBase.ironIngot);
+            }
+
+            if (Config.ConfigFields.shapelessMushroomStewRecipe) {
+                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.mushroomStew, 1), ItemBase.bowl, BlockBase.BROWN_MUSHROOM, BlockBase.RED_MUSHROOM);
+            }
+
+            if (Config.ConfigFields.shapelessMinecartChestRecipe) {
+                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartChest, 1), ItemBase.minecart, BlockBase.CHEST);
+            }
+
+            if (Config.ConfigFields.shapelessMinecartFurnaceRecipe) {
+                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartFurnace, 1), ItemBase.minecart, BlockBase.FURNACE);
+            }
+
+            if (Config.ConfigFields.shapelessStickyPistonRecipe) {
+                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.STICKY_PISTON, 1), BlockBase.PISTON, ItemBase.slimeball);
+            }
         }
     }
 }
