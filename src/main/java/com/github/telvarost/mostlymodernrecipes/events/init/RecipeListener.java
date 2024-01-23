@@ -54,6 +54,20 @@ public class RecipeListener {
                         recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.FENCE.asItem(), 3)));
                     }
                 }
+
+                if (recipe.getOutput().itemId == ItemBase.sign.id) {
+                    if (Config.ConfigFields.enableModernSignRecipe) {
+                        ItemInstance[] inputArray = new ItemInstance[9];
+                        inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                        inputArray[1] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                        inputArray[2] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                        inputArray[3] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                        inputArray[4] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                        inputArray[5] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
+                        inputArray[7] = new ItemInstance(ItemBase.stick, 1);
+                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(ItemBase.sign, 3)));
+                    }
+                }
             }
 
             if (Config.ConfigFields.enableModernWoodDoorRecipe) {
@@ -62,10 +76,6 @@ public class RecipeListener {
 
             if (Config.ConfigFields.enableModernIronDoorRecipe) {
                 CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.ironDoor, 3), "XX ", "XX ", "XX ", 'X', ItemBase.ironIngot);
-            }
-
-            if (Config.ConfigFields.enableModernSignRecipe) {
-                CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.sign, 3), "XXX", "XXX", " Y ", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
             }
 
             if (Config.ConfigFields.enableModernFenceRecipe) {

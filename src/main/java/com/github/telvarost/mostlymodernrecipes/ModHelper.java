@@ -41,9 +41,9 @@ public class ModHelper {
             }
 
             if (Config.ConfigFields.enableModernSignRecipe) {
-                if (null != ironDoorItem) {
-                    if (16 != ironDoorItem.getMaxStackSize()) {
-                        ironDoorItem.setMaxStackSize(16);
+                if (null != signItem) {
+                    if (16 != signItem.getMaxStackSize()) {
+                        signItem.setMaxStackSize(16);
                     }
                 }
             } else {
