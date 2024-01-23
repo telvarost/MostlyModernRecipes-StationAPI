@@ -8,8 +8,8 @@ public class ModHelper {
     {
         if (ModHelper.ModHelperFields.blocksAndItemsRegistered)
         {
-            ItemBase woodDoorItem = BlockBase.WOOD_DOOR.asItem();
-            ItemBase ironDoorItem = BlockBase.IRON_DOOR.asItem();
+            ItemBase woodDoorItem = ItemBase.woodDoor;
+            ItemBase ironDoorItem = ItemBase.ironDoor;
             ItemBase signItem  = ItemBase.sign;
 
             if (Config.ConfigFields.enableModernWoodDoorRecipe) {
