@@ -23,12 +23,8 @@ public class RecipeListener {
         Identifier type = event.recipeId;
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPED.type()) {
-            /** - The following recipes were not ported because the items are not stackable in beta */
-//            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.woodDoor, 3), "XX ", "XX ", "XX ", 'X', BlockBase.WOOD);
-//            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.ironDoor, 3), "XX ", "XX ", "XX ", 'X', ItemBase.ironIngot);
-//            CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.sign, 3), "XXX", "XXX", " Y ", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
-
             List<Recipe> recipes = RecipeRegistry.getInstance().getRecipes();
+
             for (int i = 0; i < recipes.size(); i++) {
                 Recipe recipe = recipes.get(i);
 
@@ -58,6 +54,18 @@ public class RecipeListener {
                         recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.FENCE.asItem(), 3)));
                     }
                 }
+            }
+
+            if (Config.ConfigFields.enableModernWoodDoorRecipe) {
+                CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.woodDoor, 3), "XX ", "XX ", "XX ", 'X', BlockBase.WOOD);
+            }
+
+            if (Config.ConfigFields.enableModernIronDoorRecipe) {
+                CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.ironDoor, 3), "XX ", "XX ", "XX ", 'X', ItemBase.ironIngot);
+            }
+
+            if (Config.ConfigFields.enableModernSignRecipe) {
+                CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.sign, 3), "XXX", "XXX", " Y ", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
             }
 
             if (Config.ConfigFields.enableModernFenceRecipe) {

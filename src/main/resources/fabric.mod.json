@@ -20,7 +20,8 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "com.github.telvarost.mostlymodernrecipes.events.init.RecipeListener"
+      "com.github.telvarost.mostlymodernrecipes.events.init.RecipeListener",
+      "com.github.telvarost.mostlymodernrecipes.events.init.RegistryListener"
     ],
     "stationapi:event_bus_client": [
     ],
@@ -28,6 +29,9 @@
     ],
     "gcapi": [
       "com.github.telvarost.mostlymodernrecipes.Config"
+    ],
+    "gcapi:presave": [
+      "com.github.telvarost.mostlymodernrecipes.events.ConfigListener"
     ]
   },
   "mixins": [

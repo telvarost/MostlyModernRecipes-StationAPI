@@ -18,9 +18,17 @@ public class Config {
         @Comment("Restart required")
         public static Boolean enableModernFenceRecipe = true;
 
+        @ConfigName("Enable Modern Iron Door Recipe")
+        @Comment("Restart required")
+        public static Boolean enableModernIronDoorRecipe = true;
+
         @ConfigName("Enable Modern Ladder Recipe")
         @Comment("Restart required")
         public static Boolean enableModernLadderRecipe = true;
+
+        @ConfigName("Enable Modern Sign Recipe")
+        @Comment("Restart required")
+        public static Boolean enableModernSignRecipe = true;
 
         @ConfigName("Enable Modern Slab Recipes")
         @Comment("Restart required")
@@ -29,6 +37,10 @@ public class Config {
         @ConfigName("Enable Modern Stone Button Recipe")
         @Comment("Restart required")
         public static Boolean enableModernStoneButtonRecipe = true;
+
+        @ConfigName("Enable Modern Wood Door Recipe")
+        @Comment("Restart required")
+        public static Boolean enableModernWoodDoorRecipe = true;
 
         @ConfigName("Enable Redyeing Wool Recipes")
         @Comment("Restart required")
