@@ -27,8 +27,9 @@ public class RecipeListener {
 
             for (int i = 0; i < recipes.size(); i++) {
                 Recipe recipe = recipes.get(i);
+                int recipeItemId = recipe.getOutput().itemId;
 
-                if (recipe.getOutput().itemId == BlockBase.LADDER.asItem().id) {
+                if (recipeItemId == BlockBase.LADDER.asItem().id) {
                     if (Config.ConfigFields.enableModernLadderRecipe) {
                         ItemInstance[] inputArray = new ItemInstance[9];
                         inputArray[0] = new ItemInstance(ItemBase.stick, 1);
@@ -42,7 +43,7 @@ public class RecipeListener {
                     }
                 }
 
-                if (recipe.getOutput().itemId == BlockBase.FENCE.asItem().id) {
+                if (recipeItemId == BlockBase.FENCE.asItem().id) {
                     if (Config.ConfigFields.enableModernFenceRecipe) {
                         ItemInstance[] inputArray = new ItemInstance[9];
                         inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
@@ -55,7 +56,7 @@ public class RecipeListener {
                     }
                 }
 
-                if (recipe.getOutput().itemId == ItemBase.sign.id) {
+                if (recipeItemId == ItemBase.sign.id) {
                     if (Config.ConfigFields.enableModernSignRecipe) {
                         ItemInstance[] inputArray = new ItemInstance[9];
                         inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
@@ -83,10 +84,18 @@ public class RecipeListener {
             }
 
             if (Config.ConfigFields.enableModernSlabRecipes) {
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "XXX", 'X', BlockBase.STONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 1), "XXX", 'X', BlockBase.SANDSTONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 2), "XXX", 'X', BlockBase.WOOD);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "XXX", 'X', BlockBase.COBBLESTONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.STONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "XXX", "   ", 'X', BlockBase.STONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "   ", "XXX", 'X', BlockBase.STONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 1), "XXX", "   ", "   ", 'X', BlockBase.SANDSTONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 1), "   ", "XXX", "   ", 'X', BlockBase.SANDSTONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 1), "   ", "   ", "XXX", 'X', BlockBase.SANDSTONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 2), "XXX", "   ", "   ", 'X', BlockBase.WOOD);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 2), "   ", "XXX", "   ", 'X', BlockBase.WOOD);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 2), "   ", "   ", "XXX", 'X', BlockBase.WOOD);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "XXX", "   ", "   ", 'X', BlockBase.COBBLESTONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "XXX", "   ", 'X', BlockBase.COBBLESTONE);
+                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "   ", "XXX", 'X', BlockBase.COBBLESTONE);
             }
 
             if (Config.ConfigFields.enableSnowLayerRecipe) {
