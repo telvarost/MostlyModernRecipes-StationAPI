@@ -9,7 +9,7 @@ import net.mine_diver.unsafeevents.listener.EventListener;
 public class ConfigListener implements PreConfigSavedListener {
 
     @Override
-    public void onPreConfigSaved(JsonObject jsonObject, JsonObject jsonObject1) {
+    public void onPreConfigSaved(int var1, JsonObject var2, JsonObject var3) {
         /** - Update max stack size on config change */
         ModHelper.AttemptToSetStackSizeOfItems();
     }

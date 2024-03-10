@@ -1,6 +1,7 @@
 # MostlyModernRecipes StationAPI Edition for Minecraft Beta 1.7.3
 
 A [StationAPI](https://modrinth.com/mod/stationapi) mod for Minecraft Beta 1.7.3 that adds some modern Minecraft crafting recipes.
+* Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync configs!
 
 ## List of Recipe Tweaks
 
