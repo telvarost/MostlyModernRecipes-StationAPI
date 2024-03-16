@@ -30,7 +30,7 @@ public class RecipeListener {
                 int recipeItemId = recipe.getOutput().itemId;
 
                 if (recipeItemId == BlockBase.LADDER.asItem().id) {
-                    if (Config.ConfigFields.enableModernLadderRecipe) {
+                    if (Config.config.enableModernLadderRecipe) {
                         ItemInstance[] inputArray = new ItemInstance[9];
                         inputArray[0] = new ItemInstance(ItemBase.stick, 1);
                         inputArray[2] = new ItemInstance(ItemBase.stick, 1);
@@ -44,7 +44,7 @@ public class RecipeListener {
                 }
 
                 if (recipeItemId == BlockBase.FENCE.asItem().id) {
-                    if (Config.ConfigFields.enableModernFenceRecipe) {
+                    if (Config.config.enableModernFenceRecipe) {
                         ItemInstance[] inputArray = new ItemInstance[9];
                         inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
                         inputArray[1] = new ItemInstance(ItemBase.stick, 1);
@@ -57,7 +57,7 @@ public class RecipeListener {
                 }
 
                 if (recipeItemId == ItemBase.sign.id) {
-                    if (Config.ConfigFields.enableModernSignRecipe) {
+                    if (Config.config.enableModernSignRecipe) {
                         ItemInstance[] inputArray = new ItemInstance[9];
                         inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
                         inputArray[1] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
@@ -71,19 +71,19 @@ public class RecipeListener {
                 }
             }
 
-            if (Config.ConfigFields.enableModernWoodDoorRecipe) {
+            if (Config.config.enableModernWoodDoorRecipe) {
                 CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.woodDoor, 3), "XX ", "XX ", "XX ", 'X', BlockBase.WOOD);
             }
 
-            if (Config.ConfigFields.enableModernIronDoorRecipe) {
+            if (Config.config.enableModernIronDoorRecipe) {
                 CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.ironDoor, 3), "XX ", "XX ", "XX ", 'X', ItemBase.ironIngot);
             }
 
-            if (Config.ConfigFields.enableModernFenceRecipe) {
+            if (Config.config.enableModernFenceRecipe) {
                 CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "   ", "XYX", "XYX", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
             }
 
-            if (Config.ConfigFields.enableModernSlabRecipes) {
+            if (Config.config.enableModernSlabRecipes) {
                 CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.STONE);
                 CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "XXX", "   ", 'X', BlockBase.STONE);
                 CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "   ", "XXX", 'X', BlockBase.STONE);
@@ -98,7 +98,7 @@ public class RecipeListener {
                 CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "   ", "XXX", 'X', BlockBase.COBBLESTONE);
             }
 
-            if (Config.ConfigFields.enableSnowLayerRecipe) {
+            if (Config.config.enableSnowLayerRecipe) {
                 CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "XXX", 'X', BlockBase.SNOW_BLOCK);
             }
         }
@@ -109,7 +109,7 @@ public class RecipeListener {
                 Recipe recipe = recipes.get(i);
 
                 if (recipe.getOutput().itemId == ItemBase.book.id) {
-                    if (Config.ConfigFields.enableModernBookRecipe) {
+                    if (Config.config.enableModernBookRecipe) {
                         List<ItemInstance> inputList = new LinkedList<>();
                         inputList.add(new ItemInstance(ItemBase.paper, 1));
                         inputList.add(new ItemInstance(ItemBase.paper, 1));
@@ -121,7 +121,7 @@ public class RecipeListener {
 
 
                 if (recipe.getOutput().itemId == BlockBase.BUTTON.id) {
-                    if (Config.ConfigFields.enableModernStoneButtonRecipe) {
+                    if (Config.config.enableModernStoneButtonRecipe) {
                         List<ItemInstance> inputList = new LinkedList<>();
                         inputList.add(new ItemInstance(BlockBase.STONE, 1));
                         recipes.set(i, new ShapelessRecipe(new ItemInstance(BlockBase.BUTTON, 1), inputList));
@@ -130,7 +130,7 @@ public class RecipeListener {
             }
 
             /** - Redyeing wool is a thing in modern MC: https://minecraft.wiki/w/Dye#Dyeing_wool_and_mobs */
-            if (Config.ConfigFields.enableRedyeingWoolRecipes) {
+            if (Config.config.enableRedyeingWoolRecipes) {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 0), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 15)); // white
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 1), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 14)); // orange
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 2), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 13)); // magenta
@@ -149,23 +149,23 @@ public class RecipeListener {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 15), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 0)); // black
             }
 
-            if (Config.ConfigFields.shapelessFlintAndSteelRecipe) {
+            if (Config.config.shapelessFlintAndSteelRecipe) {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.flintAndSteel, 1), ItemBase.flint, ItemBase.ironIngot);
             }
 
-            if (Config.ConfigFields.shapelessMushroomStewRecipe) {
+            if (Config.config.shapelessMushroomStewRecipe) {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.mushroomStew, 1), ItemBase.bowl, BlockBase.BROWN_MUSHROOM, BlockBase.RED_MUSHROOM);
             }
 
-            if (Config.ConfigFields.shapelessMinecartChestRecipe) {
+            if (Config.config.shapelessMinecartChestRecipe) {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartChest, 1), ItemBase.minecart, BlockBase.CHEST);
             }
 
-            if (Config.ConfigFields.shapelessMinecartFurnaceRecipe) {
+            if (Config.config.shapelessMinecartFurnaceRecipe) {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartFurnace, 1), ItemBase.minecart, BlockBase.FURNACE);
             }
 
-            if (Config.ConfigFields.shapelessStickyPistonRecipe) {
+            if (Config.config.shapelessStickyPistonRecipe) {
                 CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.STICKY_PISTON, 1), BlockBase.PISTON, ItemBase.slimeball);
             }
         }

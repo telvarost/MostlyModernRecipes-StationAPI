@@ -12,7 +12,7 @@ public class ModHelper {
             ItemBase ironDoorItem = ItemBase.ironDoor;
             ItemBase signItem  = ItemBase.sign;
 
-            if (Config.ConfigFields.enableModernWoodDoorRecipe) {
+            if (Config.config.enableModernWoodDoorRecipe) {
                 if (null != woodDoorItem) {
                     if (64 != woodDoorItem.getMaxStackSize()) {
                         woodDoorItem.setMaxStackSize(64);
@@ -26,7 +26,7 @@ public class ModHelper {
                 }
             }
 
-            if (Config.ConfigFields.enableModernIronDoorRecipe) {
+            if (Config.config.enableModernIronDoorRecipe) {
                 if (null != ironDoorItem) {
                     if (64 != ironDoorItem.getMaxStackSize()) {
                         ironDoorItem.setMaxStackSize(64);
@@ -40,7 +40,7 @@ public class ModHelper {
                 }
             }
 
-            if (Config.ConfigFields.enableModernSignRecipe) {
+            if (Config.config.enableModernSignRecipe) {
                 if (null != signItem) {
                     if (16 != signItem.getMaxStackSize()) {
                         signItem.setMaxStackSize(16);
