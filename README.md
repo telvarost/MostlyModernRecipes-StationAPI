@@ -6,6 +6,7 @@ A [StationAPI](https://modrinth.com/mod/stationapi) mod for Minecraft Beta 1.7.3
 ## List of Recipe Tweaks
 
 * All recipes can be enabled/disabled with [ModMenu](https://modrinth.com/mod/modmenu-beta) and [GlassConfigAPI](https://modrinth.com/mod/glass-config-api)
+* Modern Golden Apple Recipe (old recipe removed)
 * Modern Wood Door recipe (max stack size increased to 64)
 * Modern Iron Door recipe (max stack size increased to 64)
 * Modern Sign recipe (max stack size increased to 16)

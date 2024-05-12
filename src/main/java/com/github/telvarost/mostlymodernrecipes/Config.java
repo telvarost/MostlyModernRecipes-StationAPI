@@ -21,6 +21,12 @@ public class Config {
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean enableModernFenceRecipe = true;
 
+        @ConfigName("Enable Modern Golden Apple Recipe")
+        @Comment("Restart required")
+        @MultiplayerSynced
+        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        public Boolean enableModernGoldenAppleRecipe = true;
+
         @ConfigName("Enable Modern Iron Door Recipe")
         @Comment("Restart required")
         @MultiplayerSynced

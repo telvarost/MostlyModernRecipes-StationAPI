@@ -56,6 +56,22 @@ public class RecipeListener {
                     }
                 }
 
+                if (recipeItemId == ItemBase.goldenApple.id) {
+                    if (Config.config.enableModernGoldenAppleRecipe) {
+                        ItemInstance[] inputArray = new ItemInstance[9];
+                        inputArray[0] = new ItemInstance(ItemBase.goldIngot, 1);
+                        inputArray[1] = new ItemInstance(ItemBase.goldIngot, 1);
+                        inputArray[2] = new ItemInstance(ItemBase.goldIngot, 1);
+                        inputArray[3] = new ItemInstance(ItemBase.goldIngot, 1);
+                        inputArray[4] = new ItemInstance(ItemBase.apple, 1);
+                        inputArray[5] = new ItemInstance(ItemBase.goldIngot, 1);
+                        inputArray[6] = new ItemInstance(ItemBase.goldIngot, 1);
+                        inputArray[7] = new ItemInstance(ItemBase.goldIngot, 1);
+                        inputArray[8] = new ItemInstance(ItemBase.goldIngot, 1);
+                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(ItemBase.goldenApple, 1)));
+                    }
+                }
+
                 if (recipeItemId == ItemBase.sign.id) {
                     if (Config.config.enableModernSignRecipe) {
                         ItemInstance[] inputArray = new ItemInstance[9];
