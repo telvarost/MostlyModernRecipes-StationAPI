@@ -1,55 +1,54 @@
 package com.github.telvarost.mostlymodernrecipes;
 
-import net.minecraft.block.BlockBase;
-import net.minecraft.item.ItemBase;
+import net.minecraft.item.Item;
 
 public class ModHelper {
     public static void AttemptToSetStackSizeOfItems()
     {
-        if (ModHelper.ModHelperFields.blocksAndItemsRegistered)
+        if (ModHelperFields.blocksAndItemsRegistered)
         {
-            ItemBase woodDoorItem = ItemBase.woodDoor;
-            ItemBase ironDoorItem = ItemBase.ironDoor;
-            ItemBase signItem  = ItemBase.sign;
+            Item woodDoorItem = Item.WOODEN_DOOR;
+            Item ironDoorItem = Item.IRON_DOOR;
+            Item signItem  = Item.SIGN;
 
             if (Config.config.enableModernWoodDoorRecipe) {
                 if (null != woodDoorItem) {
-                    if (64 != woodDoorItem.getMaxStackSize()) {
-                        woodDoorItem.setMaxStackSize(64);
+                    if (64 != woodDoorItem.getMaxCount()) {
+                        woodDoorItem.setMaxCount(64);
                     }
                 }
             } else {
                 if (null != woodDoorItem) {
-                    if (1 != woodDoorItem.getMaxStackSize()) {
-                        woodDoorItem.setMaxStackSize(1);
+                    if (1 != woodDoorItem.getMaxCount()) {
+                        woodDoorItem.setMaxCount(1);
                     }
                 }
             }
 
             if (Config.config.enableModernIronDoorRecipe) {
                 if (null != ironDoorItem) {
-                    if (64 != ironDoorItem.getMaxStackSize()) {
-                        ironDoorItem.setMaxStackSize(64);
+                    if (64 != ironDoorItem.getMaxCount()) {
+                        ironDoorItem.setMaxCount(64);
                     }
                 }
             } else {
                 if (null != ironDoorItem) {
-                    if (1 != ironDoorItem.getMaxStackSize()) {
-                        ironDoorItem.setMaxStackSize(1);
+                    if (1 != ironDoorItem.getMaxCount()) {
+                        ironDoorItem.setMaxCount(1);
                     }
                 }
             }
 
             if (Config.config.enableModernSignRecipe) {
                 if (null != signItem) {
-                    if (16 != signItem.getMaxStackSize()) {
-                        signItem.setMaxStackSize(16);
+                    if (16 != signItem.getMaxCount()) {
+                        signItem.setMaxCount(16);
                     }
                 }
             } else {
                 if (null != signItem) {
-                    if (1 != signItem.getMaxStackSize()) {
-                        signItem.setMaxStackSize(1);
+                    if (1 != signItem.getMaxCount()) {
+                        signItem.setMaxCount(1);
                     }
                 }
             }

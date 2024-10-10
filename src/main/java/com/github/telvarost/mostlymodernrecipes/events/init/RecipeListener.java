@@ -2,12 +2,12 @@ package com.github.telvarost.mostlymodernrecipes.events.init;
 
 import com.github.telvarost.mostlymodernrecipes.Config;
 import net.mine_diver.unsafeevents.listener.EventListener;
-import net.minecraft.block.BlockBase;
-import net.minecraft.item.ItemBase;
-import net.minecraft.item.ItemInstance;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeRegistry;
-import net.minecraft.recipe.ShapedRecipe;
+import net.minecraft.ShapedRecipe;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.CraftingRecipe;
+import net.minecraft.recipe.CraftingRecipeManager;
 import net.minecraft.recipe.ShapelessRecipe;
 import net.modificationstation.stationapi.api.event.recipe.RecipeRegisterEvent;
 import net.modificationstation.stationapi.api.recipe.CraftingRegistry;
@@ -23,166 +23,166 @@ public class RecipeListener {
         Identifier type = event.recipeId;
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPED.type()) {
-            List<Recipe> recipes = RecipeRegistry.getInstance().getRecipes();
+            List<CraftingRecipe> recipes = CraftingRecipeManager.getInstance().getRecipes();
 
             for (int i = 0; i < recipes.size(); i++) {
-                Recipe recipe = recipes.get(i);
+                CraftingRecipe recipe = recipes.get(i);
                 int recipeItemId = recipe.getOutput().itemId;
 
-                if (recipeItemId == BlockBase.LADDER.asItem().id) {
+                if (recipeItemId == Block.LADDER.asItem().id) {
                     if (Config.config.enableModernLadderRecipe) {
-                        ItemInstance[] inputArray = new ItemInstance[9];
-                        inputArray[0] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[2] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[3] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[4] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[5] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[6] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[8] = new ItemInstance(ItemBase.stick, 1);
-                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.LADDER.asItem(), 3)));
+                        ItemStack[] inputArray = new ItemStack[9];
+                        inputArray[0] = new ItemStack(Item.STICK, 1);
+                        inputArray[2] = new ItemStack(Item.STICK, 1);
+                        inputArray[3] = new ItemStack(Item.STICK, 1);
+                        inputArray[4] = new ItemStack(Item.STICK, 1);
+                        inputArray[5] = new ItemStack(Item.STICK, 1);
+                        inputArray[6] = new ItemStack(Item.STICK, 1);
+                        inputArray[8] = new ItemStack(Item.STICK, 1);
+                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemStack(Block.LADDER.asItem(), 3)));
                     }
                 }
 
-                if (recipeItemId == BlockBase.FENCE.asItem().id) {
+                if (recipeItemId == Block.FENCE.asItem().id) {
                     if (Config.config.enableModernFenceRecipe) {
-                        ItemInstance[] inputArray = new ItemInstance[9];
-                        inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[1] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[2] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[3] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[4] = new ItemInstance(ItemBase.stick, 1);
-                        inputArray[5] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(BlockBase.FENCE.asItem(), 3)));
+                        ItemStack[] inputArray = new ItemStack[9];
+                        inputArray[0] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[1] = new ItemStack(Item.STICK, 1);
+                        inputArray[2] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[3] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[4] = new ItemStack(Item.STICK, 1);
+                        inputArray[5] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemStack(Block.FENCE.asItem(), 3)));
                     }
                 }
 
-                if (recipeItemId == ItemBase.goldenApple.id) {
+                if (recipeItemId == Item.GOLDEN_APPLE.id) {
                     if (Config.config.enableModernGoldenAppleRecipe) {
-                        ItemInstance[] inputArray = new ItemInstance[9];
-                        inputArray[0] = new ItemInstance(ItemBase.goldIngot, 1);
-                        inputArray[1] = new ItemInstance(ItemBase.goldIngot, 1);
-                        inputArray[2] = new ItemInstance(ItemBase.goldIngot, 1);
-                        inputArray[3] = new ItemInstance(ItemBase.goldIngot, 1);
-                        inputArray[4] = new ItemInstance(ItemBase.apple, 1);
-                        inputArray[5] = new ItemInstance(ItemBase.goldIngot, 1);
-                        inputArray[6] = new ItemInstance(ItemBase.goldIngot, 1);
-                        inputArray[7] = new ItemInstance(ItemBase.goldIngot, 1);
-                        inputArray[8] = new ItemInstance(ItemBase.goldIngot, 1);
-                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(ItemBase.goldenApple, 1)));
+                        ItemStack[] inputArray = new ItemStack[9];
+                        inputArray[0] = new ItemStack(Item.GOLD_INGOT, 1);
+                        inputArray[1] = new ItemStack(Item.GOLD_INGOT, 1);
+                        inputArray[2] = new ItemStack(Item.GOLD_INGOT, 1);
+                        inputArray[3] = new ItemStack(Item.GOLD_INGOT, 1);
+                        inputArray[4] = new ItemStack(Item.APPLE, 1);
+                        inputArray[5] = new ItemStack(Item.GOLD_INGOT, 1);
+                        inputArray[6] = new ItemStack(Item.GOLD_INGOT, 1);
+                        inputArray[7] = new ItemStack(Item.GOLD_INGOT, 1);
+                        inputArray[8] = new ItemStack(Item.GOLD_INGOT, 1);
+                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemStack(Item.GOLDEN_APPLE, 1)));
                     }
                 }
 
-                if (recipeItemId == ItemBase.sign.id) {
+                if (recipeItemId == Item.SIGN.id) {
                     if (Config.config.enableModernSignRecipe) {
-                        ItemInstance[] inputArray = new ItemInstance[9];
-                        inputArray[0] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[1] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[2] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[3] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[4] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[5] = new ItemInstance(BlockBase.WOOD.asItem(), 1);
-                        inputArray[7] = new ItemInstance(ItemBase.stick, 1);
-                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemInstance(ItemBase.sign, 3)));
+                        ItemStack[] inputArray = new ItemStack[9];
+                        inputArray[0] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[1] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[2] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[3] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[4] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[5] = new ItemStack(Block.PLANKS.asItem(), 1);
+                        inputArray[7] = new ItemStack(Item.STICK, 1);
+                        recipes.set(i, new ShapedRecipe(3, 3, inputArray, new ItemStack(Item.SIGN, 3)));
                     }
                 }
             }
 
             if (Config.config.enableModernWoodDoorRecipe) {
-                CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.woodDoor, 3), "XX ", "XX ", "XX ", 'X', BlockBase.WOOD);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Item.WOODEN_DOOR, 3), "XX ", "XX ", "XX ", 'X', Block.PLANKS);
             }
 
             if (Config.config.enableModernIronDoorRecipe) {
-                CraftingRegistry.addShapedRecipe(new ItemInstance(ItemBase.ironDoor, 3), "XX ", "XX ", "XX ", 'X', ItemBase.ironIngot);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Item.IRON_DOOR, 3), "XX ", "XX ", "XX ", 'X', Item.IRON_INGOT);
             }
 
             if (Config.config.enableModernFenceRecipe) {
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.FENCE.asItem(), 3), "   ", "XYX", "XYX", 'X', BlockBase.WOOD, 'Y', ItemBase.stick);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.FENCE.asItem(), 3), "   ", "XYX", "XYX", 'X', Block.PLANKS, 'Y', Item.STICK);
             }
 
             if (Config.config.enableModernSlabRecipes) {
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "XXX", "   ", "   ", 'X', BlockBase.STONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "XXX", "   ", 'X', BlockBase.STONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6), "   ", "   ", "XXX", 'X', BlockBase.STONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 1), "XXX", "   ", "   ", 'X', BlockBase.SANDSTONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 1), "   ", "XXX", "   ", 'X', BlockBase.SANDSTONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 1), "   ", "   ", "XXX", 'X', BlockBase.SANDSTONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 2), "XXX", "   ", "   ", 'X', BlockBase.WOOD);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 2), "   ", "XXX", "   ", 'X', BlockBase.WOOD);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 2), "   ", "   ", "XXX", 'X', BlockBase.WOOD);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "XXX", "   ", "   ", 'X', BlockBase.COBBLESTONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "XXX", "   ", 'X', BlockBase.COBBLESTONE);
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.STONE_SLAB.asItem(), 6, 3), "   ", "   ", "XXX", 'X', BlockBase.COBBLESTONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6), "XXX", "   ", "   ", 'X', Block.STONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6), "   ", "XXX", "   ", 'X', Block.STONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6), "   ", "   ", "XXX", 'X', Block.STONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 1), "XXX", "   ", "   ", 'X', Block.SANDSTONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 1), "   ", "XXX", "   ", 'X', Block.SANDSTONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 1), "   ", "   ", "XXX", 'X', Block.SANDSTONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 2), "XXX", "   ", "   ", 'X', Block.PLANKS);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 2), "   ", "XXX", "   ", 'X', Block.PLANKS);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 2), "   ", "   ", "XXX", 'X', Block.PLANKS);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 3), "XXX", "   ", "   ", 'X', Block.COBBLESTONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 3), "   ", "XXX", "   ", 'X', Block.COBBLESTONE);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SLAB.asItem(), 6, 3), "   ", "   ", "XXX", 'X', Block.COBBLESTONE);
             }
 
             if (Config.config.enableSnowLayerRecipe) {
-                CraftingRegistry.addShapedRecipe(new ItemInstance(BlockBase.SNOW.asItem(), 6), "XXX", 'X', BlockBase.SNOW_BLOCK);
+                CraftingRegistry.addShapedRecipe(new ItemStack(Block.SNOW.asItem(), 6), "XXX", 'X', Block.SNOW_BLOCK);
             }
         }
 
         if (type == RecipeRegisterEvent.Vanilla.CRAFTING_SHAPELESS.type()) {
-            List<Recipe> recipes = RecipeRegistry.getInstance().getRecipes();
+            List<CraftingRecipe> recipes = CraftingRecipeManager.getInstance().getRecipes();
             for (int i = 0; i < recipes.size(); i++) {
-                Recipe recipe = recipes.get(i);
+                CraftingRecipe recipe = recipes.get(i);
 
-                if (recipe.getOutput().itemId == ItemBase.book.id) {
+                if (recipe.getOutput().itemId == Item.BOOK.id) {
                     if (Config.config.enableModernBookRecipe) {
-                        List<ItemInstance> inputList = new LinkedList<>();
-                        inputList.add(new ItemInstance(ItemBase.paper, 1));
-                        inputList.add(new ItemInstance(ItemBase.paper, 1));
-                        inputList.add(new ItemInstance(ItemBase.paper, 1));
-                        inputList.add(new ItemInstance(ItemBase.leather, 1));
-                        recipes.set(i, new ShapelessRecipe(new ItemInstance(ItemBase.book, 1), inputList));
+                        List<ItemStack> inputList = new LinkedList<>();
+                        inputList.add(new ItemStack(Item.PAPER, 1));
+                        inputList.add(new ItemStack(Item.PAPER, 1));
+                        inputList.add(new ItemStack(Item.PAPER, 1));
+                        inputList.add(new ItemStack(Item.LEATHER, 1));
+                        recipes.set(i, new ShapelessRecipe(new ItemStack(Item.BOOK, 1), inputList));
                     }
                 }
 
 
-                if (recipe.getOutput().itemId == BlockBase.BUTTON.id) {
+                if (recipe.getOutput().itemId == Block.BUTTON.id) {
                     if (Config.config.enableModernStoneButtonRecipe) {
-                        List<ItemInstance> inputList = new LinkedList<>();
-                        inputList.add(new ItemInstance(BlockBase.STONE, 1));
-                        recipes.set(i, new ShapelessRecipe(new ItemInstance(BlockBase.BUTTON, 1), inputList));
+                        List<ItemStack> inputList = new LinkedList<>();
+                        inputList.add(new ItemStack(Block.STONE, 1));
+                        recipes.set(i, new ShapelessRecipe(new ItemStack(Block.BUTTON, 1), inputList));
                     }
                 }
             }
 
             /** - Redyeing wool is a thing in modern MC: https://minecraft.wiki/w/Dye#Dyeing_wool_and_mobs */
             if (Config.config.enableRedyeingWoolRecipes) {
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 0), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 15)); // white
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 1), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 14)); // orange
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 2), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 13)); // magenta
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 3), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 12)); // light blue
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 4), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 11)); // yellow
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 5), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 10)); // lime
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 6), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 9)); // pink
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 7), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 8)); // gray
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 8), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 7)); // light gray
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 9), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 6)); // cyan
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 10), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 5)); // purple
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 11), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 4)); // blue
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 12), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 3)); // brown
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 13), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 2)); // green
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 14), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 1)); // red
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.WOOL.asItem(), 1, 15), new ItemInstance(BlockBase.WOOL.asItem(), 1, -1), new ItemInstance(ItemBase.dyePowder, 1, 0)); // black
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 0), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 15)); // white
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 1), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 14)); // orange
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 2), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 13)); // magenta
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 3), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 12)); // light blue
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 4), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 11)); // yellow
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 5), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 10)); // lime
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 6), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 9)); // pink
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 7), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 8)); // gray
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 8), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 7)); // light gray
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 9), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 6)); // cyan
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 10), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 5)); // purple
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 11), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 4)); // blue
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 12), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 3)); // brown
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 13), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 2)); // green
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 14), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 1)); // red
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.WOOL.asItem(), 1, 15), new ItemStack(Block.WOOL.asItem(), 1, -1), new ItemStack(Item.DYE, 1, 0)); // black
             }
 
             if (Config.config.shapelessFlintAndSteelRecipe) {
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.flintAndSteel, 1), ItemBase.flint, ItemBase.ironIngot);
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Item.FLINT_AND_STEEL, 1), Item.FLINT, Item.IRON_INGOT);
             }
 
             if (Config.config.shapelessMushroomStewRecipe) {
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.mushroomStew, 1), ItemBase.bowl, BlockBase.BROWN_MUSHROOM, BlockBase.RED_MUSHROOM);
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Item.MUSHROOM_STEW, 1), Item.BOWL, Block.BROWN_MUSHROOM, Block.RED_MUSHROOM);
             }
 
             if (Config.config.shapelessMinecartChestRecipe) {
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartChest, 1), ItemBase.minecart, BlockBase.CHEST);
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Item.CHEST_MINECART, 1), Item.MINECART, Block.CHEST);
             }
 
             if (Config.config.shapelessMinecartFurnaceRecipe) {
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(ItemBase.minecartFurnace, 1), ItemBase.minecart, BlockBase.FURNACE);
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Item.FURNACE_MINECART, 1), Item.MINECART, Block.FURNACE);
             }
 
             if (Config.config.shapelessStickyPistonRecipe) {
-                CraftingRegistry.addShapelessRecipe(new ItemInstance(BlockBase.STICKY_PISTON, 1), BlockBase.PISTON, ItemBase.slimeball);
+                CraftingRegistry.addShapelessRecipe(new ItemStack(Block.STICKY_PISTON, 1), Block.PISTON, Item.SLIMEBALL);
             }
         }
     }
