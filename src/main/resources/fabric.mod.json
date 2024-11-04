@@ -27,10 +27,10 @@
     ],
     "stationapi:event_bus_server": [
     ],
-    "gcapi": [
+    "gcapi3": [
       "com.github.telvarost.mostlymodernrecipes.Config"
     ],
-    "gcapi:presave": [
+    "gcapi3:presave": [
       "com.github.telvarost.mostlymodernrecipes.events.ConfigListener"
     ]
   },
@@ -39,6 +39,16 @@
   ],
 
   "depends": {
-    "minecraft": "1.0.0-beta.7.3"
+    "minecraft": "1.0.0-beta.7.3",
+    "gcapi3": ">=3.0.2",
+    "stationapi": "*"
+  },
+
+  "recommends": {
+    "modmenu": "*"
+  },
+
+  "breaks": {
+    "unitweaks": "*"
   }
 }

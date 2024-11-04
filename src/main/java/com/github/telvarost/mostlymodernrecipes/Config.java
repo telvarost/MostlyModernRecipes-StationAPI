@@ -1,108 +1,123 @@
 package com.github.telvarost.mostlymodernrecipes;
 
-import blue.endless.jankson.Comment;
-import net.glasslauncher.mods.api.gcapi.api.*;
+import net.glasslauncher.mods.gcapi3.api.*;
 
 public class Config {
 
-    @GConfig(value = "config", visibleName = "MostlyModernRecipes")
+    @ConfigRoot(value = "config", visibleName = "MostlyModernRecipes")
     public static ConfigFields config = new ConfigFields();
 
     public static class ConfigFields {
-        @ConfigName("Enable Modern Book Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Book Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernBookRecipe = true;
 
-        @ConfigName("Enable Modern Fence Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Fence Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernFenceRecipe = true;
 
-        @ConfigName("Enable Modern Golden Apple Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Golden Apple Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernGoldenAppleRecipe = true;
 
-        @ConfigName("Enable Modern Iron Door Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Iron Door Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernIronDoorRecipe = true;
 
-        @ConfigName("Enable Modern Ladder Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Ladder Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernLadderRecipe = true;
 
-        @ConfigName("Enable Modern Sign Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Sign Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernSignRecipe = true;
 
-        @ConfigName("Enable Modern Slab Recipes")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Slab Recipes",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernSlabRecipes = true;
 
-        @ConfigName("Enable Modern Stone Button Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Stone Button Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernStoneButtonRecipe = true;
 
-        @ConfigName("Enable Modern Wood Door Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Modern Wood Door Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableModernWoodDoorRecipe = true;
 
-        @ConfigName("Enable Redyeing Wool Recipes")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Redyeing Wool Recipes",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableRedyeingWoolRecipes = true;
 
-        @ConfigName("Enable Snow Layer Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Enable Snow Layer Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean enableSnowLayerRecipe = true;
 
-        @ConfigName("Shapeless Flint and Steel Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Shapeless Flint and Steel Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean shapelessFlintAndSteelRecipe = true;
 
-        @ConfigName("Shapeless Minecart Chest Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Shapeless Minecart Chest Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean shapelessMinecartChestRecipe = true;
 
-        @ConfigName("Shapeless Minecart Furnace Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Shapeless Minecart Furnace Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean shapelessMinecartFurnaceRecipe = true;
 
-        @ConfigName("Shapeless Mushroom Stew Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Shapeless Mushroom Stew Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean shapelessMushroomStewRecipe = true;
 
-        @ConfigName("Shapeless Sticky Piston Recipe")
-        @Comment("Restart required")
-        @MultiplayerSynced
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        @ConfigEntry(
+                name = "Shapeless Sticky Piston Recipe",
+                description = "Restart required",
+                multiplayerSynced = true
+        )
         public Boolean shapelessStickyPistonRecipe = true;
     }
 }

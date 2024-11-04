@@ -2,7 +2,7 @@ package com.github.telvarost.mostlymodernrecipes.events.init;
 
 import com.github.telvarost.mostlymodernrecipes.Config;
 import net.mine_diver.unsafeevents.listener.EventListener;
-import net.minecraft.ShapedRecipe;
+import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
